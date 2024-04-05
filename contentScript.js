@@ -3,7 +3,12 @@ const checkForSkipWords = () => {
     const skipWords = result.skipWords || [];
     const videoTitle =
       document.querySelector("title")?.innerText.toLowerCase() || "";
-    if (skipWords.some((word) => videoTitle.includes(word.toLowerCase()))) {
+
+    if (
+      skipWords.some(
+        (word) => word.length > 0 && videoTitle.includes(word.toLowerCase())
+      )
+    ) {
       const nextButton = document.querySelector(".ytp-next-button");
       nextButton?.click();
     }
