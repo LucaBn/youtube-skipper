@@ -1,17 +1,17 @@
-document.addEventListener("DOMContentLoaded", function () {
-  chrome.storage.local.get(["skipWords"], function (result) {
+document.addEventListener("DOMContentLoaded", () => {
+  chrome.storage.local.get(["skipWords"], (result) => {
     if (result.skipWords) {
       document.getElementById("skipWords").value = result.skipWords.join(", ");
     }
   });
 
-  document.getElementById("saveButton").addEventListener("click", function () {
+  document.getElementById("saveButton").addEventListener("click", () => {
     const skipWords = document.getElementById("skipWords").value;
 
     chrome.storage.local.set(
       { skipWords: skipWords.split(",").map((word) => word.trim()) },
       () => {
-        console.log("skipWords saved!!!");
+        console.log("Blacklist saved!!!");
       }
     );
   });

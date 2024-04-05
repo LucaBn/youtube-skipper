@@ -1,5 +1,15 @@
+h1 {
+  font-size: 20px;
+  margin: 0 0 5px;
+}
+
 textarea {
   margin-top: 5px;
   min-height: 50px;
   resize: vertical;
+}
+
+input[type=checkbox] {
+  float: left;
+  margin: 2px 5px 0 0;
 }
